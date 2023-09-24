@@ -10,6 +10,10 @@
         // state.guitarras = db
     })
 
+    const agregarCarrito = () => {
+        alert('Diste click')
+    }
+
 </script>
 
 <template>
@@ -85,7 +89,11 @@
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
                     <h1 class="display-2 fw-bold">Modelo VAI</h1>
-                    <p class="mt-5 fs-5 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, possimus quibusdam dolor nemo velit quo, fuga omnis, iure molestias optio tempore sint at ipsa dolorum odio exercitationem eos inventore odit.</p>
+                    <p class="mt-5 fs-5 text-white">
+                        De experimentales a icónicas. Tenemos una de las selecciones de marcas de guitarras eléctricas más amplias de Europa. Incluye gigantes como Fender o Gibson, así como multitud de formas, tamaños y estilos. 
+                        Desde asequibles hasta personalizadas, Guitar LA se compromete a ayudarle a encontrar la guitarra de sus sueños. 
+                        Explore los últimos modelos y las novedades más emocionantes y disfrute de nuestra garantía gratuita de tres años. ¿No encuentra lo que busca?
+                    </p>
                     <p class="text-primary fs-1 fw-black">$399</p>
                     <button 
                         type="button"
@@ -105,6 +113,7 @@
             <Guitarra 
                 v-for="guitarra in guitarras" 
                 :guitarra="guitarra" 
+                @agregar-carrito="agregarCarrito"
             />
         </div>
     </main>
