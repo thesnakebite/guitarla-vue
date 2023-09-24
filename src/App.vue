@@ -10,8 +10,8 @@
         // state.guitarras = db
     })
 
-    const agregarCarrito = () => {
-        alert('Diste click')
+    const agregarCarrito = (guitarra) => {
+        console.log(guitarra);
     }
 
 </script>
