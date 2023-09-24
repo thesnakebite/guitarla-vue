@@ -5,7 +5,6 @@
             required: true,
         }
     })
-
 </script>
 
 <template>
