@@ -2,11 +2,15 @@
     const props = defineProps({
         carrito: {
             type: Array,
-            required: true,
+            required: true
+        },
+        guitarra: {
+            type: Object,
+            required: true
         }
     })
 
-    defineEmits(['decrementar-cantidad', 'incrementar-cantidad'])
+    defineEmits(['decrementar-cantidad', 'incrementar-cantidad', 'agregar-carrito'])
 </script>
 
 <template>
@@ -91,16 +95,17 @@
 
             <div class="row mt-5">
                 <div class="col-md-6 text-center text-md-start pt-5">
-                    <h1 class="display-2 fw-bold">Modelo VAI</h1>
+                    <h1 class="display-2 fw-bold">Modelo {{ guitarra.nombre }}</h1>
                     <p class="mt-5 fs-5 text-white">
                         De experimentales a icónicas. Tenemos una de las selecciones de marcas de guitarras eléctricas más amplias de Europa. Incluye gigantes como Fender o Gibson, así como multitud de formas, tamaños y estilos. 
                         Desde asequibles hasta personalizadas, Guitar LA se compromete a ayudarle a encontrar la guitarra de sus sueños. 
                         Explore los últimos modelos y las novedades más emocionantes y disfrute de nuestra garantía gratuita de tres años. ¿No encuentra lo que busca?
                     </p>
-                    <p class="text-primary fs-1 fw-black">$399</p>
+                    <p class="text-primary fs-1 fw-black">${{ guitarra.precio }}</p>
                     <button 
                         type="button"
-                        class="btn fs-4 bg-primary text-white py-2 px-5"
+                        class="btn fs-4 bg-primary text-white py-2 px-5" 
+                        @click="$emit('agregar-carrito', guitarra)"
                     >Agregar al Carrito</button>
                 </div>
             </div>
