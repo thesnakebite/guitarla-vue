@@ -16,7 +16,8 @@
         'decrementar-cantidad', 
         'incrementar-cantidad', 
         'agregar-carrito', 
-        'eliminar-producto'
+        'eliminar-producto',
+        'vaciar-carrito'
     ])
 
     const totalPagar = computed( () => {
@@ -99,6 +100,7 @@
                                 </table>
                                 <p class="text-end">Total pagar: <span class="fw-bold">${{ totalPagar }}</span></p>
                                 <button 
+                                    @click="$emit('vaciar-carrito')"
                                     class="btn btn-dark w-100 mt-3 p-2"
                                     >Vaciar Carrito</button>
                             </div>
